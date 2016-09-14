@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SearchingAnimView</string>
+    <string name="start_searching_anim">开始动画</string>
+    <string name="stop_searching_anim">暂停动画</string>
+</resources>

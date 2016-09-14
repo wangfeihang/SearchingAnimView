@@ -1,0 +1,47 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/search_circle_line"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_gravity="center"
+        android:background="@drawable/search_circle_line" />
+
+    <ImageView
+        android:id="@+id/search_circle_rotate"
+        android:layout_width="172dp"
+        android:layout_height="172dp"
+        android:layout_gravity="center"
+        android:background="@drawable/search_rotate_circle" />
+
+    <ImageView
+        android:id="@+id/search_circle_small"
+        android:layout_width="172dp"
+        android:layout_height="172dp"
+        android:layout_gravity="center"
+        android:background="@drawable/search_circle" />
+
+    <ImageView
+        android:id="@+id/search_circle_middle"
+        android:layout_width="187dp"
+        android:layout_height="187dp"
+        android:layout_gravity="center"
+        android:background="@drawable/search_circle" />
+
+    <ImageView
+        android:id="@+id/search_circle_large"
+        android:layout_width="206dp"
+        android:layout_height="206dp"
+        android:layout_gravity="center"
+        android:background="@drawable/search_circle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="正在寻找" />
+
+</FrameLayout>
