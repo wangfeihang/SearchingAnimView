@@ -1,4 +1,4 @@
-package com.wangfeihang.example.searchinganimview;
+package com.sakuramomoko.searchinganimview;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

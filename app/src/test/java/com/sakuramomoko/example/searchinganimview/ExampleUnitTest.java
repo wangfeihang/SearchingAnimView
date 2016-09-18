@@ -1,4 +1,4 @@
-package com.wangfeihang.example.searchinganimview;
+package com.sakuramomoko.example.searchinganimview;
 
 import org.junit.Test;
 

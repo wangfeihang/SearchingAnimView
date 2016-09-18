@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.wangfeihang.example.searchinganimview.MainActivity">
+    tools:context="com.sakuramomoko.example.searchinganimview.MainActivity">
 
     <Button
         android:id="@+id/btn_start_searching_anim"
@@ -27,15 +27,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_start_searching_anim">
 
-        <com.wangfeihang.searchinganimview.SearchingAnimView
+        <com.sakuramomoko.searchinganimview.SearchingAnimView
             android:id="@+id/searchinganimview"
             android:layout_width="206dp"
             android:layout_height="206dp" />
 
         <TextView
+            android:id="@+id/tv_searching_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textSize="20dp"
             android:text="正在寻找" />
     </FrameLayout>
 </RelativeLayout>

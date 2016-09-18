@@ -1,4 +1,4 @@
-package com.wangfeihang.searchinganimview;
+package com.sakuramomoko.searchinganimview;
 
 import android.animation.Animator;
 

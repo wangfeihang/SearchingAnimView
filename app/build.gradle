@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "com.wangfeihang.example.searchinganimview"
+        applicationId "com.sakuramomoko.example.searchinganimview"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
