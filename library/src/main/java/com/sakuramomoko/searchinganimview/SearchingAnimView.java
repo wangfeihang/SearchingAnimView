@@ -4,6 +4,11 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
@@ -13,6 +18,13 @@ import android.widget.ImageView;
 
 public class SearchingAnimView extends FrameLayout {
 
+
+    final private int mDefaultSearchingAnimViewColor = 0xff9e21;
+    final private int mDefaultSearchingAnimViewAlphaColor = 0x33000000;
+    final private int mDefaultLineCircleWith = 9;
+
+    private int mSearchingAnimViewColor;
+    private int mSearchingAnimViewColorWithAlpha;
     private Context mContext;
     private ImageView mIvLineCircle;
     private ImageView mIvRotateCircle;
@@ -44,6 +56,10 @@ public class SearchingAnimView extends FrameLayout {
         init(context, attrs);
     }
 
+    /**
+     * set the view's size
+     * @param attrs
+     */
     public void setViewSize(AttributeSet attrs) {
         if (attrs == null) {
             setViewSize(0, 0);
@@ -56,6 +72,12 @@ public class SearchingAnimView extends FrameLayout {
         }
     }
 
+
+    /**
+     * set the view's size
+     * @param parentWith
+     * @param parentHeight
+     */
     public void setViewSize(int parentWith, int parentHeight) {
         setLayoutParamsForViews(mIvLargeCircle, 1, parentWith, parentHeight);
         setLayoutParamsForViews(mIvLineCircle, lineCircleScale, parentWith, parentHeight);
@@ -64,6 +86,9 @@ public class SearchingAnimView extends FrameLayout {
         setLayoutParamsForViews(mIvMiddleCircle, middleCircleScale, parentWith, parentHeight);
     }
 
+    /**
+     * stop the view's animations
+     */
     public void stopAnimations() {
         if (animatorSet != null) {
             isStopSearchingAnim = true;
@@ -72,6 +97,9 @@ public class SearchingAnimView extends FrameLayout {
         }
     }
 
+    /**
+     * start the view's animations
+     */
     public void startAnimations() {
         isStopSearchingAnim = false;
         if (animatorSet == null) {
@@ -83,6 +111,10 @@ public class SearchingAnimView extends FrameLayout {
 
     private void init(Context context, AttributeSet attrs) {
         inflate(context, R.layout.layout_search_animation_view, this);
+        final TypedArray attributes = context.getTheme().obtainStyledAttributes(attrs, R.styleable.SearchingAnimView,
+                0, 0);
+        mSearchingAnimViewColor = attributes.getColor(R.styleable.SearchingAnimView_search_color, mDefaultSearchingAnimViewColor);
+        mSearchingAnimViewColorWithAlpha = mSearchingAnimViewColor & 0x00FFFFFF + mDefaultSearchingAnimViewAlphaColor;
         mContext = context;
         defaultAnimatorListener = new DefaultAnimatorListener() {
             @Override
@@ -104,9 +136,29 @@ public class SearchingAnimView extends FrameLayout {
         mIvSmallCircle = (ImageView) findViewById(R.id.search_circle_small);
         mIvMiddleCircle = (ImageView) findViewById(R.id.search_circle_middle);
         mIvLargeCircle = (ImageView) findViewById(R.id.search_circle_large);
+        setViewStrokeColor(mIvLineCircle);
+        setViewDrawableColor(mIvRotateCircle);
+        setViewColor(mIvSmallCircle);
+        setViewColor(mIvMiddleCircle);
+        setViewColor(mIvLargeCircle);
         setViewSize(attrs);
     }
 
+    private void setViewColor(View view) {
+        GradientDrawable myGrad = (GradientDrawable) view.getBackground();
+        myGrad.setColor(mSearchingAnimViewColorWithAlpha);
+    }
+
+    private void setViewDrawableColor(View view) {
+        Drawable mDrawable = view.getBackground();
+        mDrawable.setColorFilter(new
+                PorterDuffColorFilter(mSearchingAnimViewColor, PorterDuff.Mode.MULTIPLY));
+    }
+
+    private void setViewStrokeColor(View view) {
+        GradientDrawable myGrad = (GradientDrawable) view.getBackground();
+        myGrad.setStroke(mDefaultLineCircleWith, mSearchingAnimViewColor);
+    }
 
     private void setLayoutParamsForViews(View view, double scale, AttributeSet attrs) {
         LayoutParams layoutParams = new LayoutParams(mContext, attrs);

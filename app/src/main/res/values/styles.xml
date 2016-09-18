@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+
+
+    <style name="SearchingAnimView_Default">
+        <item name="search_color">@color/colorAccent</item>
+    </style>
 </resources>

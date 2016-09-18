@@ -1,4 +1,4 @@
-package com.sakuramomoko.example.searchinganimview;
+package com.sakuramomoko.searchinganimview.example;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
