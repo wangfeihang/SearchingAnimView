@@ -19,7 +19,7 @@ import android.widget.ImageView;
 public class SearchingAnimView extends FrameLayout {
 
 
-    final private int mDefaultSearchingAnimViewColor = 0xff9e21;
+    final private int mDefaultSearchingAnimViewColor = 0xffff9e21;
     final private int mDefaultSearchingAnimViewAlphaColor = 0x33000000;
     final private int mDefaultLineCircleWith = 9;
 
