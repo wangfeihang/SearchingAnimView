@@ -32,8 +32,8 @@
         <com.sakuramomoko.searchinganimview.SearchingAnimView
             android:id="@+id/searchinganimview"
             app:search_color="@color/colorSearchingAnimView"
-            android:layout_width="206dp"
-            android:layout_height="206dp" />
+            android:layout_width="306dp"
+            android:layout_height="306dp" />
 
         <TextView
             android:id="@+id/tv_searching_state"

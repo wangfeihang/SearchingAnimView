@@ -37,6 +37,7 @@ public class SearchingAnimView extends FrameLayout {
     private double rotateCircleScale = 344.0 / 412;
     private double smallCircleScale = 344.0 / 412;
     private double middleCircleScale = 374.0 / 412;
+    private int defaultViewWidthOrHeight =412;
     private boolean isStopSearchingAnim;
 
 
@@ -162,10 +163,22 @@ public class SearchingAnimView extends FrameLayout {
 
     private void setLayoutParamsForViews(View view, double scale, AttributeSet attrs) {
         LayoutParams layoutParams = new LayoutParams(mContext, attrs);
+        setDefaultLayoutParams(layoutParams);
         layoutParams.width = (int) (layoutParams.width * scale);
         layoutParams.height = (int) (layoutParams.height * scale);
         layoutParams.gravity = Gravity.CENTER;
         view.setLayoutParams(layoutParams);
+    }
+
+    private void setDefaultLayoutParams(LayoutParams layoutParams){
+        int width=layoutParams.width;
+        int height=layoutParams.height;
+        if(width==LayoutParams.MATCH_PARENT||width==LayoutParams.WRAP_CONTENT||width==LayoutParams.FILL_PARENT){
+            layoutParams.width = defaultViewWidthOrHeight;
+        }
+        if(height==LayoutParams.MATCH_PARENT||height==LayoutParams.WRAP_CONTENT||height==LayoutParams.FILL_PARENT){
+            layoutParams.height = defaultViewWidthOrHeight;
+        }
     }
 
     private void setLayoutParamsForViews(View view, double scale, double parentWith, double parentHeight) {
