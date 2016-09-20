@@ -2,12 +2,16 @@
 # SearchingAnimView
 SearchingAnimView是一个比较美观的搜索动画，但是你不仅仅可以用它来表达搜索的属性，它还可以用与匹配用户、歌曲播放等场景。
 
-###例子
+###Demo
 ----
+![SearchingAnimView](https://github.com/wangfeihang/SearchingAnimView/raw/master/image/demo_color.gif)
+![SearchingAnimView](https://github.com/wangfeihang/SearchingAnimView/raw/master/image/demo_text.gif)
+![SearchingAnimView](https://github.com/wangfeihang/SearchingAnimView/raw/master/image/demo_icon.gif)
+
 
 [Download Demo](https://github.com/wangfeihang/SearchingAnimView/blob/master/demo/demo-release.apk)
 
-###使用
+###Usage
 ----
 
 #### Gradle
