@@ -4,6 +4,8 @@ SearchingAnimView是一个比较美观的搜索动画，但是你不仅仅可以
 
 ###Demo
 ----
+你可以根据自己的需求设置动画的大小、颜色以及动画中间的文本或者图标。
+
 ![SearchingAnimView](https://github.com/wangfeihang/SearchingAnimView/raw/master/image/demo_color.gif)
 ![SearchingAnimView](https://github.com/wangfeihang/SearchingAnimView/raw/master/image/demo_text.gif)
 ![SearchingAnimView](https://github.com/wangfeihang/SearchingAnimView/raw/master/image/demo_icon.gif)
