@@ -1,5 +1,8 @@
 
 # SearchingAnimView
+
+[中文版README](README_CN.md)
+
 SearchingAnimView is a more beautiful search animation,you can not only use it to express the search properties, but also can used it with matching users, matching songs or other scenes.
 
 ###Demo
